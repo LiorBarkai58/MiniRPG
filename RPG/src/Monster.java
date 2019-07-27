@@ -1,6 +1,15 @@
 public class Monster {
     private int level;
     private String name;
+
+    public double getMaxHP() {
+        return maxHP;
+    }
+
+    public void setMaxHP(double maxHP) {
+        this.maxHP = maxHP;
+    }
+
     private double maxHP;
     private double HP;
     private double attack;
@@ -23,17 +32,17 @@ public class Monster {
 
     public void setLevel(int level) { this.level = level; }
 
-    public double getExp() { return exp; }
+    double getExp() { return exp; }
 
-    public void setExp(double exp) { this.exp = exp; }
+    void setExp(double exp) { this.exp = exp; }
 
-    public double getArmor() { return armor; }
+    double getArmor() { return armor; }
 
-    public void setArmor(double armor) {
+    void setArmor(double armor) {
         this.armor = armor;
     }
 
-    public Monster(String name, double hp, double attack, int level) {
+    Monster(String name, double hp, double attack, int level) {
         this.name = name;
         this.maxHP = hp;
         this.HP = maxHP;
@@ -47,11 +56,15 @@ public class Monster {
 
 
 
-    public void attack(Monster m1){
+    void attack(Monster m1){
         m1.setHP(m1.getHP()- (attack > m1.getArmor()? attack-m1.getArmor() : 0));
         if (m1.getHP() <= 0){
             exp+= m1.getExp();
         }
+    }
+    Monster copy(){
+        Monster copy = new Monster(this.name, this.HP, this.attack, this.level);
+        return copy;
     }
 
     private void heal(double hp){ this.HP = HP+hp > maxHP ? maxHP : HP+hp; }
@@ -62,7 +75,8 @@ public class Monster {
                 "Level: " + level +
                 "\nHP: " + HP +
                 "\nAttack: " + attack +
-                "\nArmor: " + armor;
+                "\nArmor: " + armor +
+                "\nEXP: " + exp;
     }
 
 }
