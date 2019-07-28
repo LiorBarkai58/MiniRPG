@@ -4,6 +4,7 @@ public class Main {
     public static Scanner kb = new Scanner(System.in);
 
     public static void main(String[] args) {
+        Monster m1 = new Monster("tomer karpovski",750, 300, 15);
         Monster goblin = new Monster("Goblin", 5, 1.5, 1);
         Monster darkElf = new Monster("Dark Elf", 8, 3, 1);
         Monster ogre = new Monster("Ogoblin", 12, 1, 1);
