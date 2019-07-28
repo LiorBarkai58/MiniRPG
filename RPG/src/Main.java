@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Monster goblin = new Monster("lava giants", 5, 1.5, 1);
         Monster darkElf = new Monster("Dark Elf", 8, 3, 1);
-        Monster ogre = new Monster("Ogre", 12, 1, 1);
+        Monster ogre = new Monster("Ogoblin", 12, 1, 1);
         Monster Naga = new Monster( "Naga" , 15 , 2, 1);
         Monster[] monsters = {goblin, darkElf, ogre, Naga};
         Player player = new Player("Player", 50, 3, 1);
